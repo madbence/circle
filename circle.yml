@@ -4,14 +4,12 @@ machine:
 
 deployment:
   release:
-    branch: master
+    tag: /v.*/
     commands:
        - git config --global user.email "dev@purposeindustries.co"
        - git config --global user.name "CircleCI"
        - npm prune --production
        - npm dedupe
-       - npm version ${NPM_RELEASE-patch}
-       - git push origin master && git push --tags
        - curl https://gist.githubusercontent.com/madbence/a67c19b9eaa46c3fc49c/raw/mk-release.sh > mk-release
        - chmod 744 mk-release
        - ./mk-release madbence circle
