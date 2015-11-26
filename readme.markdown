@@ -1,5 +1,8 @@
 # circle ci test
 
+configure the project on circle, add `GITHUB_ACCESS_TOKEN` env var
+(needed for publishing new release)
+
 ## cut release
 
 ```sh
