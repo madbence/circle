@@ -6,8 +6,11 @@ deployment:
   release:
     branch: master
     commands:
+       - git config --global user.email "dev@purposeindustries.co"
+       - git config --global user.name "CircleCI"
        - npm prune --production
        - npm dedupe
+       - git push && git push --tags
        - npm version ${NPM_RELEASE-patch}
        - curl https://gist.githubusercontent.com/madbence/a67c19b9eaa46c3fc49c/raw/mk-release.sh > mk-release
        - chmod 744 mk-release
