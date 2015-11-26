@@ -11,5 +11,4 @@ deployment:
        - npm version $(NPM_RELEASE-patch)
        - curl https://gist.githubusercontent.com/madbence/a67c19b9eaa46c3fc49c/raw/mk-release.sh > mk-release.sh
        - chmod 744 mk-release.sh
-       - ls -lha ./release
-       - ./mk-release oroce/circleci-test
+       - ./mk-release madbence circle
